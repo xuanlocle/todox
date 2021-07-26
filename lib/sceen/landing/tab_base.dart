@@ -43,21 +43,18 @@ abstract class TabBase extends StatelessWidget {
             duration: const Duration(milliseconds: 300),
             child: InkResponse(
                 onTap: () {
-                  if(listSelected == null || listSelected.isEmpty)
-                    return;
+                  if (listSelected == null || listSelected.isEmpty) return;
                   onTapActionListener();
                 },
                 child: Container(
                     height: 56.0,
                     width: double.infinity,
                     child: Center(
-                        child: Text(
-                      'Choose Action',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20.0),
-                    )),
+                        child: Text('Choose Action',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0))),
                     decoration: BoxDecoration(
                         shape: BoxShape.rectangle, color: Colors.orange)))));
   }
@@ -92,7 +89,7 @@ abstract class TabBase extends StatelessWidget {
                       buildAppBar(),
                       SliverItem(
                           child: ListTile(
-                              tileColor: Colors.grey,
+                              tileColor: Colors.white,
                               onTap: () {
                                 onTapSelectAllListener(keys);
                               },
@@ -103,11 +100,9 @@ abstract class TabBase extends StatelessWidget {
                                   },
                                   value: (snapshot.hasData &&
                                       (snapshot.data ?? []).length ==
-                                          keys.length)),
-                              title: Text('Select All',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold)))),
+                                          keys.length &&
+                                      keys.length > 0)),
+                              title: Text('Select All'))),
                       ...keys.map((key) {
                         TodoModel tm = boxValue.get(key)!;
                         return SliverItem(

@@ -24,8 +24,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-
-  cupertino_icons: ^1.0.2
   json_serializable: ^4.1.2
   json_annotation: ^4.0.1
   hive: ^2.0.4

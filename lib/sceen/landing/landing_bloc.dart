@@ -62,8 +62,8 @@ class LandingBloc {
     }
   }
 
-  void insertTodoToBox(TodoModel todo) {
-    todoBox.add(todo);
+  Future<void> insertTodoToBox(TodoModel todo) async {
+    await todoBox.add(todo);
   }
 
   void updateTodoToBox(int key, TodoModel todo) {
