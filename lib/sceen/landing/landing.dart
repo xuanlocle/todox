@@ -160,9 +160,9 @@ class _LandingScreenState extends State<LandingScreen> {
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'All'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.golf_course), label: 'Complete'),
+                icon: Icon(Icons.golf_course), label: 'Incomplete'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.next_plan), label: 'Incomplete')
+                icon: Icon(Icons.next_plan), label: 'Completed')
           ]);
 
   void showDialogOverviewAction(Screen screen) {
